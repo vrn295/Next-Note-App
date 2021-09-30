@@ -1,0 +1,112 @@
+@import "./variable";
+@import "./mixins";
+
+.container{
+    height: 88vh;
+    background-image: url("/images/Login-Bottom.svg");
+    background-size: 100% auto;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    .login_container{
+        margin-top: 7.5rem;
+        @include flex(column, center, center);
+        h1{
+            font-size: 4rem;
+            line-height: 6rem;
+            margin: 0;
+        }
+        p{
+            margin-bottom: 2rem;
+            width: 25vw;
+        }
+        .form_container{
+            @include flex(column, center, center);
+            .input_field_container{
+                margin-bottom: 2.5rem;
+                @include flex(column, unset, unset);
+                position: relative;
+                .input_field{
+                    width: 25vw;
+                    padding: 0.938rem 1.063rem;
+                    background: rgba(238, 82, 68, 0.1);
+                    border: 1px solid #2020204b;
+                    border-radius: 5px;
+                    font-size: 0.875rem;
+                    color: $font-color;
+                }
+                .text_area_field{
+                    width: 25vw;
+                    padding: 0.938rem 1.063rem;
+                    background: rgba(238, 82, 68, 0.1);
+                    border: 1px solid #2020204b;
+                    border-radius: 5px;
+                    font-size: 0.875rem;
+                    color: $font-color;
+                    max-height: 10rem;
+                }
+                .input_field:focus , .text_area_field:focus{
+                outline: none;
+                border-color: $font-color;
+                }
+                
+                .sameLineInput{
+                    display: flex;
+                    justify-content: space-between;
+                    align-self: normal;
+                    .input_field{
+                        width: 16vw;
+                    }
+                }
+                
+                
+                .validationError{
+                    color: $red-1;
+                    text-align: left;
+                    font-size: 0.75rem;
+                    align-self: flex-start;
+                    position: absolute;
+                    top: 3.125rem;
+                }
+            
+                .text-area-validationError{
+                    top: 88px !important;
+                }
+                
+                .validationErrorInput{
+                    border-color: #FF333380;
+                }
+            }
+            .input_field_container_signup{
+                margin-bottom: 2rem;
+            }
+            .login_btn{
+                width: 25vw;
+                padding: 0.8rem 1.063rem;
+                background-color: $red-1;
+            }
+        }
+        .password_container{
+            position: relative;
+            .forget_password{
+                position: absolute;
+                bottom: 1.2rem;
+                right: 0;
+                font-size: 0.875rem;
+                cursor: pointer;
+                text-align: right;
+            }
+        }
+    }
+}
+.signup_container{
+    height: 89.5vh;
+    .login_container{
+        margin-top: 7rem;
+        h1{
+            line-height: 5.5rem;
+        }
+        p{
+            margin-bottom: 1.5rem;
+        }
+    }
+}
